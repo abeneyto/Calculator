@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculator.component.scss']
 })
 export class CalculatorComponent implements OnInit {
+  result = '';
   digits: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   operators: string[] = ['*', '-', '+', '/'];
 
@@ -13,5 +14,7 @@ export class CalculatorComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  addToOperation(value: number | string): void {
+    console.log(value);
+  }
 }

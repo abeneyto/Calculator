@@ -1,1 +1,2 @@
-<app-keyboard [digits]="digits" [operators]="operators"></app-keyboard>
+<app-result-viewer [result]="result"></app-result-viewer>
+<app-keyboard [digits]="digits" [operators]="operators" (buttonClicked)="addToOperation($event)"></app-keyboard>
