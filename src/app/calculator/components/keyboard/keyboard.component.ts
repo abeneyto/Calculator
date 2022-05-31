@@ -14,7 +14,8 @@ export class KeyboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  clickDigit(digit: number): void {
-    this.buttonClicked.emit(digit);
+  clickButton(dataClicked: number | number): void {
+    console.log(dataClicked)
+    this.buttonClicked.emit(dataClicked);
   }
 }

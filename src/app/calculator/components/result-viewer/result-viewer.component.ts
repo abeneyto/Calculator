@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-result-viewer',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./result-viewer.component.scss']
 })
 export class ResultViewerComponent implements OnInit {
-
+  @Input() result;
   constructor() { }
 
   ngOnInit(): void {

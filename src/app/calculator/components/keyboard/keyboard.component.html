@@ -1,6 +1,6 @@
 <div *ngFor="let digit of digits">
-    <button (click)="clickDigit()">{{ digit }}</button>
+    <button (click)="clickButton(digit)">{{ digit }}</button>
 </div>
 <div *ngFor="let operator of operators">
-    <button (click)="clickOperator()">{{ operator }}</button>
+    <button (click)="clickButton(operator)">{{ operator }}</button>
 </div>
