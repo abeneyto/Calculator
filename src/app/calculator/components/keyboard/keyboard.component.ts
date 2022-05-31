@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class KeyboardComponent implements OnInit {
   @Output() buttonClicked = new EventEmitter<string | number>();
-
+  @Output() submit = new EventEmitter();
   @Input() digits: number[];
   @Input() operators: string[];
   constructor() { }
@@ -16,5 +16,8 @@ export class KeyboardComponent implements OnInit {
   }
   clickButton(dataClicked: number | number): void {
     this.buttonClicked.emit(dataClicked);
+  }
+  submitButton(): void {
+    this.submit.emit();
   }
 }

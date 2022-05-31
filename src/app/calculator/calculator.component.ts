@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class CalculatorComponent implements OnInit {
   msgError = '';
   result = '';
+  operation = {
+    firstNumber: '',
+    operator: '',
+    secondNumber: ''
+  };
   digits: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   operators: string[] = ['*', '-', '+', '/'];
 
@@ -16,14 +21,23 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
   addToOperation(value: number | string): void {
-    if (this.result.length === 0) {
-      typeof value === 'number' ? this.result += value : this.msgError = 'Invalid data.'
+    if (!this.operation.firstNumber) {
+      typeof value === 'number' ? this.operation.firstNumber += value : this.msgError = 'Invalid data.'
     } else {
-      if (this.operators.some(operator => this.result.includes(operator))) {
-        typeof value === 'number' ? this.result += value : this.msgError = 'Please, only one operation per time.'
+      if (this.operation.operator) {
+        typeof value === 'number' ? this.operation.secondNumber += value :
+          this.msgError = 'Please, only one operation per time.';
       } else {
-        this.result += value;
+        typeof value === 'number' ? this.operation.firstNumber += value : this.operation.operator = value;
       }
+    }
+  }
+  submitOperation(): void {
+    if (this.operation.firstNumber && this.operation.operator && this.operation.secondNumber) {
+      this.result = eval(`${this.operation.firstNumber}${this.operation.operator} ${this.operation.secondNumber}`);
+      console.log(this.result);
+    } else {
+      this.msgError = 'Incorrect operation';
     }
   }
 }

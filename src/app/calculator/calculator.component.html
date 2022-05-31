@@ -1,3 +1,3 @@
-<app-result-viewer [result]="result"></app-result-viewer>
-<app-keyboard [digits]="digits" [operators]="operators" (buttonClicked)="addToOperation($event)"></app-keyboard>
+<app-result-viewer [result]="result" [operation]="operation"></app-result-viewer>
+<app-keyboard [digits]="digits" [operators]="operators" (buttonClicked)="addToOperation($event)" (submit)="submitOperation()"></app-keyboard>
 <div>{{ msgError }}</div>

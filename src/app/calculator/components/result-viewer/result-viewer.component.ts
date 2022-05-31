@@ -7,6 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ResultViewerComponent implements OnInit {
   @Input() result;
+  @Input() operation;
+  ;
+
   constructor() { }
 
   ngOnInit(): void {
