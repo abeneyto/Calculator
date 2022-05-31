@@ -3,7 +3,7 @@ body {
 }
 
 button {
-    padding: 1rem 3rem;
+    padding: 1rem 0rem;
     background: none;
     color: inherit;
     border: none;
@@ -11,12 +11,28 @@ button {
     cursor: pointer;
     width: 100%;
     text-align: center;
+    border-bottom: 1px solid whitesmoke;
     &:hover {
-        background-color: oldlace;
+        background-color: rgb(252, 252, 252);
     }
 }
 
 h4 {
     color: gray;
     font-weight: 400;
+}
+
+$breakpoint-mov: 640px;
+$breakpoint-tablet: 970px;
+$breakpoint-desktop: 1280px;
+@mixin mq-tablet {
+    @media only screen and (min-width: $breakpoint-mov) and (max-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin mq-desktop {
+    @media only screen and (min-width: $breakpoint-tablet) {
+        @content;
+    }
 }
