@@ -19,7 +19,11 @@ export class CalculatorComponent implements OnInit {
     if (this.result.length === 0) {
       typeof value === 'number' ? this.result += value : this.msgError = 'Invalid data.'
     } else {
-
+      if (this.operators.some(operator => this.result.includes(operator))) {
+        typeof value === 'number' ? this.result += value : this.msgError = 'Please, only one operation per time.'
+      } else {
+        this.result += value;
+      }
     }
   }
 }
