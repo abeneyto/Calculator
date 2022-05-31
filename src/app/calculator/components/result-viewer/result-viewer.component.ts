@@ -11,7 +11,5 @@ export class ResultViewerComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addToOperation(value: Event): void {
-    console.log(value);
-  }
+
 }

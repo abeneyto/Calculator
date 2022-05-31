@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculator.component.scss']
 })
 export class CalculatorComponent implements OnInit {
+  msgError = '';
   result = '';
   digits: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   operators: string[] = ['*', '-', '+', '/'];
@@ -15,6 +16,10 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
   addToOperation(value: number | string): void {
-    console.log(value);
+    if (this.result.length === 0) {
+      typeof value === 'number' ? this.result += value : this.msgError = 'Invalid data.'
+    } else {
+
+    }
   }
 }
