@@ -1,7 +1,5 @@
-<div *ngFor="let digit of digits">
-    <button (click)="clickButton(digit)">{{ digit }}</button>
+<div *ngFor="let dataButton of dataButtons">
+    <button (click)="clickButton(dataButton)">{{ dataButton }}</button>
 </div>
-<div *ngFor="let operator of operators">
-    <button (click)="clickButton(operator)">{{ operator }}</button>
-</div>
-<button (click)="submitButton()">=</button>
+<button (click)="submitClick()">=</button>
+<button (click)="deleteClick()">C</button>

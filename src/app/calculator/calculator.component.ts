@@ -13,8 +13,7 @@ export class CalculatorComponent implements OnInit {
     operator: '',
     secondNumber: ''
   };
-  digits: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-  operators: string[] = ['*', '-', '+', '/'];
+  dataButtons: (string | number)[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '*', '-', '+', '/'];
 
   constructor() { }
 
@@ -39,5 +38,13 @@ export class CalculatorComponent implements OnInit {
     } else {
       this.msgError = 'Incorrect operation';
     }
+  }
+  deleteData(): void {
+    this.result = '';
+    this.operation = {
+      firstNumber: '',
+      operator: '',
+      secondNumber: ''
+    };
   }
 }
