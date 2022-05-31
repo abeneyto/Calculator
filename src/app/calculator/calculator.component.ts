@@ -20,6 +20,7 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
   addToOperation(value: number | string): void {
+    this.msgError = '';
     if (!this.operation.firstNumber) {
       typeof value === 'number' ? this.operation.firstNumber += value : this.msgError = 'Invalid data.'
     } else {
@@ -32,6 +33,7 @@ export class CalculatorComponent implements OnInit {
     }
   }
   submitOperation(): void {
+    this.msgError = '';
     if (this.operation.firstNumber && this.operation.operator && this.operation.secondNumber) {
       this.result = eval(`${this.operation.firstNumber}${this.operation.operator} ${this.operation.secondNumber}`);
       console.log(this.result);
@@ -40,6 +42,7 @@ export class CalculatorComponent implements OnInit {
     }
   }
   deleteData(): void {
+    this.msgError = '';
     this.result = '';
     this.operation = {
       firstNumber: '',

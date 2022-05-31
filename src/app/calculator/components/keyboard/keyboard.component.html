@@ -1,5 +1,11 @@
-<div *ngFor="let dataButton of dataButtons">
-    <button (click)="clickButton(dataButton)">{{ dataButton }}</button>
+<div class="keyboard">
+    <div class="flex-item" *ngFor="let dataButton of dataButtons">
+        <button (click)="clickButton(dataButton)">{{ dataButton }}</button>
+    </div>
+    <div class="flex-item">
+        <button (click)="deleteClick()">C</button>
+    </div>
+    <div class="flex-item submit">
+        <button (click)="submitClick()">=</button>
+    </div>
 </div>
-<button (click)="submitClick()">=</button>
-<button (click)="deleteClick()">C</button>

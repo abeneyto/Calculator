@@ -1,3 +1,5 @@
-<app-result-viewer [result]="result" [operation]="operation"></app-result-viewer>
-<app-keyboard [dataButtons]="dataButtons" (buttonClicked)="addToOperation($event)" (submit)="submitOperation()" (delete)="deleteData()"></app-keyboard>
-<div>{{ msgError }}</div>
+<section id="calculator">
+    <app-result-viewer [result]="result" [operation]="operation"></app-result-viewer>
+    <app-keyboard [dataButtons]="dataButtons" (buttonClicked)="addToOperation($event)" (submit)="submitOperation()" (delete)="deleteData()"></app-keyboard>
+    <div>{{ msgError }}</div>
+</section>

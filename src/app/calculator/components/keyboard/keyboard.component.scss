@@ -1,0 +1,10 @@
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .flex-item {
+        flex: 33.3333%;
+        background-color: beige;
+        &.submit {}
+    }
+}

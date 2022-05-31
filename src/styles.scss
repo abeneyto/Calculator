@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: "Roboto";
+}
+
+button {
+    padding: 1rem 3rem;
+    background: none;
+    color: inherit;
+    border: none;
+    outline: inherit;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    &:hover {
+        background-color: oldlace;
+    }
+}
+
+h4 {
+    color: gray;
+    font-weight: 400;
+}
